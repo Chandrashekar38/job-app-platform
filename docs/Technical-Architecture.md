@@ -8,8 +8,8 @@ The system is a web-based platform designed to streamline job application outsou
 
 ## 2. High-Level Architecture Diagram
 
-![Architecture Diagram](./path-to-your-image.png)
-<!-- Replace "path-to-your-image.png" with the actual path once you upload the diagram -->
+![Architecture Diagram](./docs/architecture.md)
+
 
 ---
 
