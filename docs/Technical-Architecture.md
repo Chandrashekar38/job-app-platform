@@ -8,7 +8,7 @@ The system is a web-based platform designed to streamline job application outsou
 
 ## 2. High-Level Architecture Diagram
 
-![Architecture Diagram](docs/Architecture%20Diagram.png)
+![Architecture Diagram](Architecture%20Diagram.png)
 
 
 
