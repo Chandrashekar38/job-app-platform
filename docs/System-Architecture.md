@@ -1,5 +1,3 @@
-### ✍️ `docs/System-Architecture.md`
-
 ```markdown
 # 🏛 System Architecture & Overview
 
