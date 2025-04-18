@@ -1,4 +1,3 @@
-### 🧠 `docs/API-Spec.md`
 
 ```markdown
 # 📡 API Specification Document
