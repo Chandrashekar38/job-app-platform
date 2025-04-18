@@ -1,17 +1,3 @@
-### 🧩 Step 3: Create the Database Design Document
-
-**Filename:**  
-```
-docs/Database-Design.md
-```
-
-This document will describe the core models, their fields, and relationships. Since your platform supports multiple roles and actions, this will be the foundation for your backend schema.
-
----
-
-### 📄 Content to paste:
-
-```markdown
 # 🧩 Database Design Document
 
 ## 1. Overview
@@ -20,80 +6,64 @@ This document outlines the database schema for the Job Application Outsourcing P
 
 ---
 
-## 2. Entities & Schema
+## 2. Entities & Fields
 
 ### 🧍 User
 
-Represents any user on the platform (Candidate, Operator, Admin).
+Represents any user on the platform — Candidate, Operator, or Admin.
 
-```json
-{
-  "_id": ObjectId,
-  "name": String,
-  "email": String,
-  "passwordHash": String,
-  "role": "candidate" | "operator" | "admin",
-  "createdAt": Date,
-  "updatedAt": Date
-}
-```
+- `_id`: ObjectId
+- `name`: String
+- `email`: String
+- `passwordHash`: String
+- `role`: Enum — "candidate", "operator", or "admin"
+- `createdAt`: Date
+- `updatedAt`: Date
 
 ---
 
 ### 📄 CandidateProfile
 
-Additional profile details submitted by the candidate.
+Additional details provided by the candidate.
 
-```json
-{
-  "_id": ObjectId,
-  "userId": ObjectId,  // references User
-  "resumeUrl": String,
-  "coverLetterUrl": String,
-  "profileFormData": Object, // name, phone, address, etc.
-  "jobLinksDocumentUrl": String,
-  "createdAt": Date,
-  "updatedAt": Date
-}
-```
+- `_id`: ObjectId
+- `userId`: ObjectId (references User)
+- `resumeUrl`: String (link to uploaded resume)
+- `coverLetterUrl`: String (optional)
+- `profileFormData`: Object (JSON with fields like phone, location, etc.)
+- `jobLinksDocumentUrl`: String (uploaded file containing job links)
+- `createdAt`: Date
+- `updatedAt`: Date
 
 ---
 
 ### 📋 JobApplication
 
-Each job link the candidate provides.
+Individual job listings the candidate wishes to apply for.
 
-```json
-{
-  "_id": ObjectId,
-  "candidateId": ObjectId, // references User
-  "operatorId": ObjectId,  // references User (optional)
-  "jobTitle": String,
-  "company": String,
-  "jobLink": String,
-  "status": "pending" | "applied" | "rejected",
-  "appliedAt": Date (optional),
-  "notes": String (optional),
-  "createdAt": Date,
-  "updatedAt": Date
-}
-```
+- `_id`: ObjectId
+- `candidateId`: ObjectId (references User)
+- `operatorId`: ObjectId (references User, optional)
+- `jobTitle`: String
+- `company`: String
+- `jobLink`: String (URL to job post)
+- `status`: Enum — "pending", "applied", "rejected"
+- `appliedAt`: Date (optional)
+- `notes`: String (optional)
+- `createdAt`: Date
+- `updatedAt`: Date
 
 ---
 
 ### 🧑‍💼 OperatorAssignment
 
-Links operators to candidates via admin approval.
+Connects operators to candidates (assigned by admin).
 
-```json
-{
-  "_id": ObjectId,
-  "candidateId": ObjectId,
-  "operatorId": ObjectId,
-  "assignedBy": ObjectId, // Admin user ID
-  "createdAt": Date
-}
-```
+- `_id`: ObjectId
+- `candidateId`: ObjectId (references User)
+- `operatorId`: ObjectId (references User)
+- `assignedBy`: ObjectId (Admin user ID)
+- `createdAt`: Date
 
 ---
 
@@ -102,21 +72,19 @@ Links operators to candidates via admin approval.
 - One **User** can be a **Candidate**, **Operator**, or **Admin**
 - One **Candidate** can upload multiple **JobApplications**
 - One **Operator** can be assigned to multiple **Candidates**
-- One **Admin** manages assignments via **OperatorAssignment**
+- One **Admin** assigns operators using **OperatorAssignment**
 
 ---
 
-## 4. Optional Future Tables
+## 4. Optional (Future) Tables
 
-- `Notifications`
-- `PaymentLogs`
-- `JobBoardScrapingQueue`
+- `Notifications` — to notify candidates/operators of updates
+- `PaymentLogs` — for billing or subscription features
+- `JobBoardScrapingQueue` — for potential automation in the future
 
 ---
 
 ## 5. Notes
 
-- All passwords are hashed using bcrypt
-- File uploads (resume, cover letter, job list) are stored via cloud (e.g., AWS S3 or Firebase)
-
-```
+- Passwords will be securely hashed using bcrypt.
+- Files (resume, cover letter, job list) will be uploaded to cloud storage like AWS S3 or Firebase.
