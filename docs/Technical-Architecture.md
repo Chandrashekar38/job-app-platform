@@ -82,5 +82,3 @@ The system is designed as a web-based platform with three user roles: Candidate,
 - Cron jobs to check job board APIs
 - Payment gateway integration
 ```
-
----
