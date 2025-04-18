@@ -6,8 +6,9 @@ This document describes the high-level architecture and design decisions of the 
 
 ## 🧱 1. Architecture Diagram
 
-![System Architecture](System-Architecture.png)
-
+<p align="center">
+  <img src="System-Architecture.png" alt="System Architecture Diagram" width="700">
+</p>
 
 ---
 
