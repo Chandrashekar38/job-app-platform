@@ -1,4 +1,3 @@
-```markdown
 # 🏛 System Architecture & Overview
 
 This document describes the high-level architecture and design decisions of the Job Application Outsourcing Platform.
@@ -7,32 +6,8 @@ This document describes the high-level architecture and design decisions of the 
 
 ## 🧱 1. Architecture Diagram
 
-```
-Frontend (React / Next.js)
-       |
-       |  REST API
-       v
-Backend (Node.js + Express)
-       |
-       |  MongoDB Driver / Mongoose
-       v
-Database (MongoDB)
+![System Architecture](System-Architecture.png)
 
-+------------+     +------------+     +------------+
-|  Candidate | --> |   Backend  | --> |   MongoDB  |
-+------------+     +------------+     +------------+
-
-+------------+                          ^
-|  Operator  | ------------------------+
-+------------+
-
-+--------+
-| Admin  |
-+--------+
-    |
-    v
-[Assign Operators to Candidates]
-```
 
 ---
 
@@ -62,7 +37,7 @@ Database (MongoDB)
 
 ## 🔐 3. Security
 
-- Passwords hashed with bcrypt
+- Passwords hashed with `bcrypt`
 - JWT-based authentication
 - Role-based access control for endpoints
 - Secure file uploads with validation
@@ -72,8 +47,8 @@ Database (MongoDB)
 ## 🌩️ 4. File Storage (Cloud)
 
 - Resume, cover letter, and job files will be stored in:
-  - Firebase Storage or
-  - AWS S3 (future-proof)
+  - Firebase Storage **or**
+  - AWS S3 *(future-proof)*
 
 ---
 
@@ -90,6 +65,3 @@ Database (MongoDB)
 - Candidate Resume/Profile Upload
 - Operator Dashboard & Job Tracker
 - Admin Assignments
-```
-
----
