@@ -1,4 +1,5 @@
 ```markdown
+
 # 📘 API Documentation
 
 This document outlines the key RESTful API endpoints used in the **Job Application Outsourcing Platform**.
