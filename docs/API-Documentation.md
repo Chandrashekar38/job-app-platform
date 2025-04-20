@@ -1,5 +1,3 @@
-```markdown
-
 # 📘 API Documentation
 
 This document outlines the key RESTful API endpoints used in the **Job Application Outsourcing Platform**.
@@ -13,6 +11,7 @@ This document outlines the key RESTful API endpoints used in the **Job Applicati
 Registers a new user (Candidate, Operator, or Admin).
 
 **Request Body**
+
 ```json
 {
   "name": "John Doe",
