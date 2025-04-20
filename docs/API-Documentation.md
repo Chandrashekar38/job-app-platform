@@ -1,15 +1,13 @@
-
-
 ```markdown
 # 📘 API Documentation
 
-This document outlines the key RESTful API endpoints used in the Job Application Outsourcing Platform.
+This document outlines the key RESTful API endpoints used in the **Job Application Outsourcing Platform**.
 
 ---
 
 ## 🔐 Authentication APIs
 
-### POST `/api/auth/signup`
+### 📝 POST `/api/auth/signup`
 
 Registers a new user (Candidate, Operator, or Admin).
 
@@ -36,7 +34,7 @@ Registers a new user (Candidate, Operator, or Admin).
 
 ---
 
-### POST `/api/auth/login`
+### 🔑 POST `/api/auth/login`
 
 Authenticates user and returns JWT.
 
@@ -63,17 +61,20 @@ Authenticates user and returns JWT.
 
 ## 👤 Candidate APIs
 
-### GET `/api/candidate/profile`
+### 📄 GET `/api/candidate/profile`
 
 Returns the candidate's profile details.
 
-**Headers:** `Authorization: Bearer <jwt_token>`
+**Headers**
+```
+Authorization: Bearer <jwt_token>
+```
 
 ---
 
-### POST `/api/candidate/resume`
+### 📤 POST `/api/candidate/resume`
 
-Uploads candidate's resume and cover letter (optional).
+Uploads candidate's resume and cover letter.
 
 **Form Data**
 - `resume`: file (required)
@@ -81,7 +82,7 @@ Uploads candidate's resume and cover letter (optional).
 
 ---
 
-### POST `/api/candidate/job-links`
+### 🔗 POST `/api/candidate/job-links`
 
 Uploads list of job links (JSON or CSV).
 
@@ -99,13 +100,18 @@ Uploads list of job links (JSON or CSV).
 
 ## 🛠️ Operator APIs
 
-### GET `/api/operator/assignments`
+### 📥 GET `/api/operator/assignments`
 
 Returns a list of candidates assigned to the operator.
 
+**Headers**
+```
+Authorization: Bearer <jwt_token>
+```
+
 ---
 
-### POST `/api/operator/progress`
+### 📌 POST `/api/operator/progress`
 
 Updates job application status for a candidate.
 
@@ -122,13 +128,18 @@ Updates job application status for a candidate.
 
 ## 🧑‍💼 Admin APIs
 
-### GET `/api/admin/users`
+### 👥 GET `/api/admin/users`
 
 Returns all users with filtering options by role.
 
+**Headers**
+```
+Authorization: Bearer <admin_token>
+```
+
 ---
 
-### POST `/api/admin/assign-operator`
+### 🔁 POST `/api/admin/assign-operator`
 
 Assigns an operator to a candidate.
 
@@ -142,3 +153,15 @@ Assigns an operator to a candidate.
 
 ---
 
+## 📎 Notes
+
+- All endpoints are protected and require JWT-based authentication.
+- Use proper `Content-Type` headers for `application/json` or `multipart/form-data`.
+- Validation and error messages are returned in the format:
+```json
+{
+  "error": "Detailed error message here"
+}
+```
+
+---
