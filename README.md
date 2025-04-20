@@ -27,7 +27,10 @@ The platform follows a modular architecture:
 📌 [System Architecture](docs/System-Architecture.md)  
 📌 [Technical Architecture](docs/Technical-Architecture.md)
 
-![Architecture Diagram](docs/System-Architecture.png)
+<p align="center">
+  <img src="docs/System-Architecture.png" alt="Architecture Diagram" width="600"/>
+</p>
+
 
 ---
 
