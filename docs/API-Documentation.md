@@ -20,6 +20,7 @@ Registers a new user (Candidate, Operator, or Admin).
   "password": "yourpassword",
   "role": "candidate"
 }
+
 ```
 
 **Response**
