@@ -15,15 +15,6 @@ A web-based platform that helps candidates outsource their job application tasks
 
 ---
 
-## 🏗 Architecture
-
-The platform follows a modular architecture:
-
-- **Frontend:** React or Next.js
-- **Backend:** Node.js + Express
-- **Database:** MongoDB or PostgreSQL
-- **File Storage:** Firebase or AWS S3 (future-proof)
-
 📌 [System Architecture](docs/System-Architecture.md)  
 📌 [Technical Architecture](docs/Technical-Architecture.md)
 
