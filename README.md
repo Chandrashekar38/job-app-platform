@@ -1,9 +1,3 @@
-# 💼 Job Application Outsourcing Platform
-
-A web-based platform that helps candidates outsource their job application tasks to dedicated operators. It streamlines resume uploads, job link management, and operator progress tracking — all under admin supervision.
-
----
-
 ## 🚀 Features
 
 - Candidate signup and login
